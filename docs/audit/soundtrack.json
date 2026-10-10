@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-10",
+  "title": "Soviet Connection",
+  "artist": "Michael Hunter",
+  "origin": "Archivo aportado por Sergi para incorporar a Los Cerdas. Sergi declara haber comprado la licencia; documento no aportado ni verificado.",
+  "role": "soundtrack_source; excluded from the friends memories inventory",
+  "source": {
+    "original_path": "Grabación de pantalla 2026-10-10 a las 10.28.14.mov",
+    "bytes": 200961560,
+    "sha256": "48a008b47d0284c6595a8e8f8fb3612c95e19e5d4e8fab278fef036b6e680dfe"
+  },
+  "derivative": {
+    "path": "public/media/soviet-connection.mp3",
+    "bytes": 4124101,
+    "sha256": "3a4df36d746ec859066b0938881f0f5db63f5eb6a66e001dd6fde93689498de2",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "171.807347",
+        "size": "4124101"
+      }
+    }
+  },
+  "conversion_command": [
+    "ffmpeg",
+    "-nostdin",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-y",
+    "-i",
+    "Grabación de pantalla 2026-10-10 a las 10.28.14.mov",
+    "-map",
+    "0:a:0",
+    "-vn",
+    "-map_metadata",
+    "-1",
+    "-codec:a",
+    "libmp3lame",
+    "-b:a",
+    "192k",
+    "-ar",
+    "44100",
+    "-metadata",
+    "title=Soviet Connection",
+    "-metadata",
+    "artist=Michael Hunter",
+    "public/media/soviet-connection.mp3"
+  ],
+  "verification": "MP3 fully decoded without errors; source SHA-256 unchanged."
+}

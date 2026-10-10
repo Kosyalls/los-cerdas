@@ -1,0 +1,16 @@
+node_modules/
+dist/
+offline-preview/
+releases/
+.DS_Store
+.vercel/
+.env*
+*.MOV
+/*.mov
+/*.mp4
+/*.png
+/*.jpg
+docs/evidence/
+docs/audit/thumbnails/
+docs/audit/contact-*.jpg
+public/downloads/LOS-CERDAS-MAQUETA/
