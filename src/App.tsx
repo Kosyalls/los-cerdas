@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { members } from "./data/members";
 import { inventory } from "./data/inventory";
+import { photos, type Photo } from "./data/photos";
+import { Gallery } from "./Gallery";
 import {
   BloodSplatter,
   PoliceTape,
@@ -106,48 +108,20 @@ const sections: Section[] = [
     plan: [
       "Paquete final: web offline, todas las fotos y vídeos originales, copias compatibles y catálogo.",
       "Abrir index.html con doble clic. Sin cuentas, CDN, servidor ni instalación.",
-      "Ahora puedes descargar la maqueta visual: contiene siete fotos de muestra y no es el archivo final.",
+      "La copia actual incluye las 41 imágenes, sus originales y el tema musical. Los vídeos quedan para la siguiente fase.",
     ],
   },
 ];
 
 const samples = [
-  {
-    id: "LC-001",
-    text: "Cuatro amigos alrededor de una mesa con un recipiente y pajitas.",
-    label: "FOTOGRAFÍA DE GRUPO",
-  },
-  {
-    id: "LC-008",
-    text: "Foto de grupo junto a una hoguera de noche.",
-    label: "PRUEBA NOCTURNA",
-  },
-  {
-    id: "LC-022",
-    text: "Tres amigos se fotografían en una playa.",
-    label: "REGISTRO EN LA PLAYA",
-  },
-  {
-    id: "LC-019",
-    text: "Tres amigos posan juntos en un local.",
-    label: "FOTOGRAFÍA DE GRUPO",
-  },
-  {
-    id: "LC-023",
-    text: "Tres amigos con gafas de sol dentro de un coche.",
-    label: "REGISTRO EN EL COCHE",
-  },
-  {
-    id: "LC-026",
-    text: "Varios amigos posan en una foto vertical dentro de un local.",
-    label: "FOTOGRAFÍA DE GRUPO",
-  },
-  {
-    id: "LC-043",
-    text: "De izquierda a derecha, Kili, Coco, Jowi y Luizao, según la identificación confirmada por Sergi.",
-    label: "LOS CUATRO / IDENTIDAD CONFIRMADA",
-  },
-];
+  "LC-001",
+  "LC-008",
+  "LC-022",
+  "LC-019",
+  "LC-023",
+  "LC-026",
+  "LC-043",
+].map((id) => photos.find((photo) => photo.id === id)!);
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
@@ -245,6 +219,9 @@ function Dialog({
     const dialog = ref.current!;
     const oldOverflow = document.body.style.overflow;
     dialog.showModal();
+    if (window.matchMedia("(max-width: 850px)").matches) {
+      dialog.querySelector("button")?.focus({ preventScroll: true });
+    }
     document.body.style.overflow = "hidden";
     return () => {
       dialog.close();
@@ -259,6 +236,34 @@ function Dialog({
       onCancel={(e) => {
         e.preventDefault();
         closeRef.current();
+      }}
+      onKeyDown={(event) => {
+        if (
+          event.key !== "Tab" ||
+          !window.matchMedia("(max-width: 850px)").matches
+        )
+          return;
+        const targets = [
+          ...event.currentTarget.querySelectorAll<HTMLElement>(
+            "button, a[href], input, select, textarea, [tabindex]",
+          ),
+        ].filter(
+          (target) =>
+            !target.matches(":disabled") &&
+            target.tabIndex >= 0 &&
+            target.getClientRects().length > 0,
+        );
+        if (!targets.length) return;
+        event.preventDefault();
+        const index = targets.indexOf(document.activeElement as HTMLElement);
+        const next =
+          index < 0
+            ? event.shiftKey
+              ? targets.length - 1
+              : 0
+            : (index + (event.shiftKey ? -1 : 1) + targets.length) %
+              targets.length;
+        targets[next].focus();
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) closeRef.current();
@@ -280,8 +285,45 @@ function Dialog({
 export function App() {
   const [entered, setEntered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const media = window.matchMedia("(max-width: 850px)");
+    const closeOnDesktop = () => {
+      if (!media.matches) setMenuOpen(false);
+    };
+    closeOnDesktop();
+    media.addEventListener("change", closeOnDesktop);
+    return () => media.removeEventListener("change", closeOnDesktop);
+  }, [menuOpen]);
   const [section, setSection] = useState<Section | null>(null);
-  const [photo, setPhoto] = useState<(typeof samples)[number] | null>(null);
+  const [photo, setPhoto] = useState<Photo | null>(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const photoIndex = photo
+    ? photos.findIndex((item) => item.id === photo.id)
+    : -1;
+  const stepPhoto = (direction: number) =>
+    setPhoto((current) =>
+      current
+        ? photos[
+            (photos.findIndex((item) => item.id === current.id) +
+              direction +
+              photos.length) %
+              photos.length
+          ]
+        : null,
+    );
+  useEffect(() => {
+    if (!photo) return;
+    const navigatePhoto = (event: KeyboardEvent) => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        stepPhoto(event.key === "ArrowLeft" ? -1 : 1);
+      }
+    };
+    window.addEventListener("keydown", navigatePhoto);
+    return () => window.removeEventListener("keydown", navigatePhoto);
+  }, [photo]);
   const [effects, setEffects] = useState(true);
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [audioFailed, setAudioFailed] = useState(false);
@@ -317,7 +359,8 @@ export function App() {
     }
   }, [entered]);
   const openSection = (item: Section) => {
-    setSection(item);
+    if (item.id === "pruebas") setGalleryOpen(true);
+    else setSection(item);
     setMenuOpen(false);
   };
   return (
@@ -541,38 +584,48 @@ export function App() {
               </button>
             </header>
             {menuOpen && (
-              <nav
-                id="mobile-nav"
-                className="mobile-nav"
-                aria-label="Índice móvil"
+              <Dialog
+                title="Índice del expediente"
+                className="mobile-menu-dialog"
+                onClose={() => setMenuOpen(false)}
               >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setEntered(false);
-                    setMenuOpen(false);
-                  }}
+                <div className="mobile-menu-heading">
+                  <p className="eyebrow">LOS CERDAS / ARCHIVO CLASIFICADO</p>
+                  <h2>EL EXPEDIENTE.</h2>
+                </div>
+                <nav
+                  id="mobile-nav"
+                  className="mobile-nav"
+                  aria-label="Índice móvil"
                 >
-                  00 / Volver al acceso
-                </button>
-                {sections.map((item) => (
                   <button
                     type="button"
-                    key={item.id}
-                    onClick={() => openSection(item)}
+                    onClick={() => {
+                      setEntered(false);
+                      setMenuOpen(false);
+                    }}
                   >
-                    {item.number} / {item.label}
-                    <Arrow />
+                    00 / Volver al acceso
                   </button>
-                ))}
-                <button
-                  type="button"
-                  aria-pressed={effects}
-                  onClick={() => setEffects(!effects)}
-                >
-                  {effects ? "Efectos: ON" : "Efectos: OFF"}
-                </button>
-              </nav>
+                  {sections.map((item) => (
+                    <button
+                      type="button"
+                      key={item.id}
+                      onClick={() => openSection(item)}
+                    >
+                      {item.number} / {item.label}
+                      <Arrow />
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    aria-pressed={effects}
+                    onClick={() => setEffects(!effects)}
+                  >
+                    {effects ? "Efectos: ON" : "Efectos: OFF"}
+                  </button>
+                </nav>
+              </Dialog>
             )}
             <main id="contenido" className="archive-main">
               <section className="archive-hero">
@@ -684,7 +737,7 @@ export function App() {
                     className="text-button mono"
                     onClick={() => openSection(sections[1])}
                   >
-                    EL PLAN DE LA GALERÍA <Arrow />
+                    VER LAS 41 PRUEBAS <Arrow />
                   </button>
                 </div>
                 <div className="proof-grid">
@@ -795,9 +848,9 @@ export function App() {
                   <p className="eyebrow">07 / COPIA DE CONSERVACIÓN</p>
                   <h2>NI LA NUBE ES PARA SIEMPRE.</h2>
                   <p>
-                    La copia offline completa será parte del regalo.
+                    Las 41 imágenes, sus originales y esta web.
                     <br />
-                    Ahora, llévate esta maqueta y ábrela sin Internet.
+                    Guarda la copia y vuelve sin Internet.
                   </p>
                 </div>
                 {isLocal ? (
@@ -817,7 +870,7 @@ export function App() {
             </main>
             <footer className="archive-footer mono">
               <span>LOS CERDAS / EL ARCHIVO CLASIFICADO</span>
-              <span>MAQUETA DE DIRECCIÓN ARTÍSTICA · 7 FOTOS DE MUESTRA</span>
+              <span>41 IMÁGENES · ORIGINALES EN LA COPIA OFFLINE</span>
               <button
                 type="button"
                 className="text-button"
@@ -886,21 +939,64 @@ export function App() {
           </div>
         </Dialog>
       )}
+      {galleryOpen && (
+        <Dialog
+          title="Galería de pruebas"
+          className="gallery-dialog"
+          onClose={() => setGalleryOpen(false)}
+        >
+          <Gallery onSelect={setPhoto} />
+        </Dialog>
+      )}
       {photo && (
         <Dialog
           title={`Prueba ${photo.id}`}
           className="photo-dialog"
           onClose={() => setPhoto(null)}
         >
-          <img src={`./media/${photo.id}.jpg`} alt={photo.text} />
+          <img
+            src={photo.src}
+            alt={photo.text}
+            width={photo.width}
+            height={photo.height}
+          />
           <div className="photo-dialog-caption">
             <span className="mono">
               {photo.id} / {photo.label}
             </span>
             <p>
-              Fecha y contexto por confirmar. Copia de muestra; el original se
-              conserva intacto.
+              Fecha y contexto por confirmar. El original se conserva intacto en
+              la descarga offline.
             </p>
+            <div className="photo-pagination">
+              <button
+                type="button"
+                aria-label="Fotografía anterior"
+                onClick={() => stepPhoto(-1)}
+              >
+                ←
+              </button>
+              <span className="mono" aria-live="polite">
+                {photoIndex + 1} / {photos.length}
+              </span>
+              <button
+                type="button"
+                aria-label="Fotografía siguiente"
+                onClick={() => stepPhoto(1)}
+              >
+                →
+              </button>
+            </div>
+            {isLocal && (
+              <a
+                className="save-original"
+                href={`./originales/${encodeURIComponent(photo.originalFile)}`}
+                target="_blank"
+                rel="noopener"
+              >
+                ABRIR ORIGINAL ↗
+              </a>
+            )}
           </div>
         </Dialog>
       )}

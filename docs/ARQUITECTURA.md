@@ -1,6 +1,6 @@
-# Arquitectura propuesta — online y conservación offline
+# Arquitectura — online y conservación offline
 
-Fase de diseño. Base ya comprobable: React 19 + TypeScript + Vite, datos locales y recursos locales. Sin backend para el contenido de recuerdos. La maqueta no implementa aún todas las funciones del archivo.
+React 19 + TypeScript + Vite, datos locales y recursos locales. Sin backend para el contenido de recuerdos. La versión pública implementa acceso, galería de las 41 imágenes, música y descarga offline con originales fotográficos; las demás funciones completas siguen en diseño. Publicación autorizada por Sergi el 10-10-2026.
 
 ## Dos entregas desde el mismo contenido
 
@@ -15,16 +15,16 @@ flowchart LR
     D --> Z
     C --> Z
     F --> Z
-    W --> V[Vercel: comprobar peso y acceso]
+    W --> V[Vercel: web pública desplegada]
 ```
 
-El catálogo será TypeScript/JSON versionado con IDs estables. Entidades: `Member`, `MediaAsset`, `Episode`, `GroomCase`, `Secret`, `ArchiveManifest`. Los medios conservarán ruta original, SHA-256, ruta derivada, dimensiones, orientación, fecha técnica y fecha editorial con estado `confirmed / approximate / unknown`. Una relación persona/medio tendrá fuente de confirmación; no se deducirá por reconocimiento facial. Separar el texto confirmado de la ficción gráfica.
+El catálogo fotográfico es TypeScript/JSON versionado con IDs estables (`src/data/photos.ts` y `public/media/catalog.json`). La arquitectura editorial futura contempla estas entidades: Entidades: `Member`, `MediaAsset`, `Episode`, `GroomCase`, `Secret`, `ArchiveManifest`. Los medios conservarán ruta original, SHA-256, ruta derivada, dimensiones, orientación, fecha técnica y fecha editorial con estado `confirmed / approximate / unknown`. Una relación persona/medio tendrá fuente de confirmación; no se deducirá por reconocimiento facial. Separar el texto confirmado de la ficción gráfica.
 
 Los datos se importan al bundle al construir. No usar `fetch()` para leer el catálogo en la edición `file://`. Fotos y vídeos usan rutas relativas. Navegación por hash o estado local, sin rutas que dependan de rewrites de servidor. La app no requiere persistir información para poder consultarse; favoritos/progreso serían mejoras optativas, con acceso a almacenamiento protegido y fallback en memoria.
 
 ## Offline duradero
 
-Cambiar únicamente `base: './'` en Vite deja módulos ES que pueden fallar al abrir `file://`. La documentación de [Vite](https://vite.dev/guide/build#relative-base) cubre rutas relativas y [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_classic_scripts) explica las restricciones de módulos locales. Por eso existe una segunda compilación: **JS clásico IIFE, sin imports en tiempo de ejecución, sin carga dividida ni servidor**. En la maqueta, `scripts/build-offline.mjs` empaqueta React y sus dependencias con esbuild y copia fotos/fuente/CSS a una carpeta autocontenida.
+Cambiar únicamente `base: './'` en Vite deja módulos ES que pueden fallar al abrir `file://`. La documentación consultada de [Vite](https://vite.dev/guide/build#relative-base) cubre rutas relativas y [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_classic_scripts) explica las restricciones de módulos locales. Por eso existe una segunda compilación: **JS clásico IIFE, sin imports en tiempo de ejecución, sin carga dividida ni servidor**. `scripts/build-offline.mjs` empaqueta React y sus dependencias con esbuild y copia las 41 fotos, sus originales, retratos, MP3, fuente y CSS a una carpeta autocontenida. Verifica los hashes antes de copiar originales, genera `SHA256SUMS.txt` y una galería estática `GALERIA.html` sin JavaScript. El visor permite abrir el original en otra pestaña; no depende del comportamiento de `download` en enlaces file://.
 
 Entrega final prevista:
 
@@ -53,26 +53,30 @@ Generar derivados reproducibles sin modificar originales: WebP + JPEG, miniatura
 
 ## Hosting y descarga completa
 
-Según documentación consultada el **10-10-2026**, [Vercel Hobby](https://vercel.com/docs/plans/hobby) ofrece uso personal gratuito y 100 GB de transferencia rápida incluidos. [La subida de fuentes por CLI está limitada a 100 MB](https://vercel.com/docs/limits#static-file-uploads). Este límite de CLI no equivale a un límite universal de tamaño total del archivo ni de salida de una compilación; la misma documentación indica que la salida no tiene ese límite de archivos. Revalidar condiciones antes de publicar.
+Según documentación consultada el **10-10-2026**, [Vercel Hobby](https://vercel.com/docs/plans/hobby) ofrece uso personal gratuito y 100 GB de transferencia rápida incluidos. [La subida de fuentes por CLI está limitada a 100 MB](https://vercel.com/docs/limits#static-file-uploads). Este límite de CLI no equivale a un límite universal de tamaño total del archivo ni de salida de una compilación; la misma documentación indica que la salida no tiene ese límite de archivos. La publicación actual por CLI ha terminado correctamente. La incorporación futura de vídeos y ZIP integral requerirá volver a medir el conjunto.
 
-Los originales actuales suman 168,7 MB, por lo que **no caben junto a la app en una subida CLI Hobby sin cambios**. Propuesta para la web: desplegar solo derivados y código, con presupuesto de 80 MB. Medir la conversión antes de confirmar gratuidad. Una visita que consume 25 MB supone aproximadamente 4.000 visitas dentro de 100 GB, sin contar solicitudes repetidas ni otros recursos; es una estimación de tráfico, no una promesa.
+Los originales actuales suman 168,7 MB, por lo que **no caben junto a la app en una subida CLI Hobby sin cambios**. La versión publicada incluye derivados, código y ZIP fotográfico de 34,2 MB: el conjunto subido por CLI es de aproximadamente 42 MB y el despliegue ha terminado correctamente en el proyecto de uso personal. La futura incorporación de vídeos y todos sus originales exige otro presupuesto de tamaño y alojamiento. Una visita que consume 25 MB supone aproximadamente 4.000 visitas dentro de 100 GB, sin contar solicitudes repetidas ni otros recursos; es una estimación de tráfico, no una promesa.
 
 La **descarga integral con originales** es un artefacto aparte, previsiblemente mayor de 168 MB al añadir frontend y derivados. Debe entregarse localmente al novio aunque el alojamiento cambie. Para descargarla también desde la web hay que elegir un alojamiento compatible o un despliegue por Git/build que genere y sirva el ZIP, verificando límites reales, permisos y transferencia. También se pueden ofrecer paquetes de originales por separado con índice; dividir archivos no elimina el límite agregado de una subida CLI. No se propone un botón de descarga integral hasta que el paquete exista y sea accesible.
 
 ## Acceso y privacidad
 
-El acceso «clasificado» de la maqueta es teatro. Un código comprobado en JavaScript o un easter egg no protege fotos públicas. Antes de publicar, decidir si toda la web requiere protección de despliegue o si hay dos catálogos: edición online seleccionada y entrega privada completa. Los medios exclusivos offline no deben viajar en el bundle online. No exponer originales con ubicación por defecto. El ZIP completo conserva originales deliberadamente para su propietario.
+El acceso «clasificado» de la maqueta es teatro. Un código comprobado en JavaScript o un easter egg no protege fotos públicas. Sergi ha autorizado expresamente la web y el repositorio públicos y después la inclusión de todas las imágenes. La publicación actual sirve las 41 fotos y el ZIP con sus originales fotográficos; no hay autenticación. Los MOV originales con ubicación y la grabación musical fuente siguen excluidos del despliegue. Al incorporar otros materiales, aplicar el alcance autorizado para esos contenidos.
 
-En esta fase no hay cuentas, autenticación, analytics, servicios externos en ejecución ni publicación. El audio solicitado ya se sirve desde un MP3 local y está incluido en el ZIP offline; procedencia y estado en `MUSICA.md`. La grabación fuente se conserva y verifica aparte del inventario de recuerdos.
+No hay cuentas, autenticación, analytics ni servicios externos en ejecución. La web está publicada en https://los-cerdas.vercel.app y su fuente en https://github.com/Kosyalls/los-cerdas. El despliegue se hace con Vercel CLI; la vinculación automática GitHub–Vercel devolvió un error de acceso y no está activa. Detalle en `PUBLICACION.md`. El audio solicitado ya se sirve desde un MP3 local y está incluido en el ZIP offline; procedencia y estado en `MUSICA.md`. La grabación fuente se conserva y verifica aparte del inventario de recuerdos.
 
 ## Orden de implementación después de la validación
 
-1. Confirmar dirección artística y tono.
+1. Dirección artística, tono y publicación pública confirmados.
 2. Cerrar textos reales, cronología, clasificación de medios y privacidad.
 3. Preparar derivados y comprobar peso/calidad.
-4. Implementar fichas, galería, vídeos, cronología y expediente Kili.
-5. Incorporar sorpresas, audio autorizado y descarga integral real.
+4. Galería completa ya implementada; continuar fichas, vídeos, cronología y expediente Kili.
+5. Música y descarga fotográfica offline incorporadas; continuar sorpresas y descarga integral con vídeos.
 6. Construir y verificar ZIP completo offline; añadir respaldo estático y hashes.
 7. Revisar con los tres amigos y el dispositivo de entrega; publicar la versión adecuada.
 
 Criterio final de aceptación: mismo contenido autorizado disponible offline sin red; todos los originales conservados y verificables; ninguna sección vacía ni descarga ficticia; hechos confirmados y accesibilidad de teclado/móvil.
+
+## Móvil y escritorio
+
+`src/mobile.css` se importa después de los estilos base y limita todos los ajustes a 850 px. Cabecera persistente, menú nativo modal con foco contenido, bloqueo del fondo, áreas seguras, texto legible y controles de 44–56 px. Galería con 2/3/4 columnas según ancho y visor con disposición horizontal para pantallas bajas. La comparación de ocho capturas de escritorio en 1024/1440/1920 px antes/después de los ajustes móviles resultó idéntica. La incorporación posterior de la galería sí añade navegación y contenido nuevos en escritorio.

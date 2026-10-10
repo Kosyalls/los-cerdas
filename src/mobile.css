@@ -1,0 +1,412 @@
+/* All refinements are scoped to the existing mobile breakpoint. */
+@media (max-width: 850px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  button,
+  a {
+    touch-action: manipulation;
+  }
+  .gate {
+    min-height: 100svh;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .gate-header {
+    padding-top: calc(20px + env(safe-area-inset-top));
+  }
+  .gate-description {
+    font-size: 15px;
+  }
+  .gate-copy > .small {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .gate-footer {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    font-size: 10px;
+  }
+  .gate-footer > span:first-child {
+    max-width: none;
+  }
+  .text-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .gate-copy .primary-button {
+    min-height: 56px;
+    font-size: 12px;
+  }
+  .photo-tab,
+  .photo-bottom,
+  .gate-index {
+    font-size: 9px;
+  }
+  .photo-bottom {
+    gap: 12px;
+    line-height: 1.5;
+  }
+  .censor-bar {
+    font-size: 9px;
+  }
+  .gate-evidence {
+    margin: 35px auto 28px;
+    padding: 32px 0 75px;
+  }
+  .gate-stamp {
+    bottom: 65px;
+  }
+  .hand-note {
+    bottom: 0;
+    font-size: 19px;
+  }
+  .scene-gate .cartridge-one {
+    bottom: 35px;
+  }
+  .scene-gate .cartridge-two {
+    bottom: 27px;
+  }
+  .scene-gate .cartridge-three {
+    bottom: 64px;
+  }
+  .gate-perimeter {
+    margin-top: 0;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px 84px;
+    gap: 12px;
+    min-height: calc(72px + env(safe-area-inset-top));
+    padding: calc(12px + env(safe-area-inset-top))
+      max(20px, env(safe-area-inset-right)) 12px
+      max(20px, env(safe-area-inset-left));
+    background: #111110;
+  }
+  .topbar > .mono {
+    font-size: 9px;
+    line-height: 1.45;
+    max-width: none;
+    letter-spacing: 0;
+  }
+  .topbar .header-tools {
+    gap: 0;
+  }
+  .topbar .music-toggle {
+    width: 44px;
+    min-height: 44px;
+    padding: 9px;
+  }
+  .topbar .music-toggle > span {
+    display: none;
+  }
+  .menu-button {
+    min-height: 44px;
+    width: 84px;
+    font-size: 11px;
+  }
+  .archive-main {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .hero-copy .eyebrow,
+  .section-heading .eyebrow {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .hero-copy p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  .hero-copy .outline-button {
+    min-height: 52px;
+    font-size: 11px;
+  }
+  .hero-evidence .photo-tab,
+  .photo-caption {
+    font-size: 9px;
+  }
+  .photo-caption {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+  }
+  .perimeter-ticker {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 16px 20px;
+    font-size: 9px;
+  }
+  .inventory-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .inventory-strip > div {
+    min-width: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .inventory-strip > div > span {
+    font-size: 10px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  .inventory-strip small {
+    font-size: 9px;
+    line-height: 1.55;
+  }
+  .section-heading {
+    gap: 14px;
+  }
+  .section-heading > .small,
+  .section-heading .text-button {
+    font-size: 10px;
+  }
+  .proof-meta {
+    font-size: 10px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .proof-note {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .suspect {
+    gap: 12px;
+  }
+  .suspect > .small,
+  .suspect > .small:last-child,
+  .suspect-alias {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .suspect-alias {
+    margin-top: 0;
+    letter-spacing: 0.04em;
+  }
+  .groom-label {
+    font-size: 10px;
+  }
+  .file-label {
+    font-size: 10px;
+    line-height: 1.5;
+    gap: 14px;
+  }
+  .wedding-content {
+    position: relative;
+    z-index: 1;
+  }
+  .wedding-content p,
+  .archive-exit > div > p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .archive-exit .eyebrow {
+    font-size: 10px;
+  }
+  .archive-exit .outline-button {
+    min-height: 52px;
+    font-size: 12px;
+  }
+  .archive-footer {
+    padding: 18px 20px calc(18px + env(safe-area-inset-bottom));
+    font-size: 10px;
+    gap: 12px;
+  }
+  .archive-footer .text-button {
+    font-size: 11px;
+  }
+
+  .dialog {
+    max-height: calc(
+      100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+    );
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dialog::backdrop {
+    backdrop-filter: none;
+    background: #000e;
+  }
+  .close-dialog {
+    width: 44px;
+    height: 44px;
+    margin-bottom: -56px;
+    background: #c52022;
+  }
+  .concept-content {
+    padding: 64px 22px 28px;
+  }
+  .concept-content > .eyebrow,
+  .concept-tag,
+  .concept-foot {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .concept-intro,
+  .concept-content ul {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .concept-content .primary-button {
+    min-height: 52px;
+    font-size: 11px;
+  }
+  .sample-grid span {
+    font-size: 10px;
+  }
+  .photo-dialog {
+    width: calc(100% - 24px);
+    max-width: 720px;
+    padding-top: 64px;
+  }
+  .photo-dialog .close-dialog {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    float: none;
+    margin: 0;
+  }
+  .photo-dialog > img {
+    width: 100%;
+    max-height: max(180px, calc(100dvh - 250px));
+    object-fit: contain;
+    padding: 0 12px;
+  }
+  .photo-dialog-caption {
+    padding: 18px;
+  }
+  .photo-dialog-caption .mono {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .photo-dialog-caption p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .mobile-menu-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    border: 0;
+    padding: env(safe-area-inset-top) max(20px, env(safe-area-inset-right))
+      env(safe-area-inset-bottom) max(20px, env(safe-area-inset-left));
+    background: #111110;
+  }
+  .mobile-menu-heading {
+    padding-top: 72px;
+  }
+  .mobile-menu-heading .eyebrow {
+    font-size: 10px;
+  }
+  .mobile-menu-heading h2 {
+    font-size: clamp(40px, 9vw, 60px);
+    margin: 14px 0 24px;
+  }
+  .mobile-menu-dialog .close-dialog {
+    top: 12px;
+    margin-right: 0;
+  }
+  .mobile-menu-dialog .mobile-nav {
+    padding: 0 0 24px;
+    background: none;
+  }
+  .mobile-menu-dialog .mobile-nav button {
+    min-height: 52px;
+    padding: 16px 4px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .audio-status {
+    bottom: calc(15px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 560px) {
+  .gate-copy h1 {
+    font-size: clamp(49px, 12.8vw, 69px);
+  }
+  .gate-footer {
+    gap: 6px;
+  }
+  .gate-footer .text-button {
+    font-size: 11px;
+  }
+  .archive-hero {
+    gap: 18px;
+    padding-top: 30px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(46px, 12.6vw, 66px);
+  }
+  .inventory-strip > div + div {
+    padding-left: 10px;
+  }
+  .inventory-strip strong {
+    font-size: 36px;
+  }
+  .section-heading h2 {
+    font-size: clamp(28px, 7.8vw, 34px);
+  }
+  .suspects-grid {
+    gap: 12px;
+  }
+  .suspect {
+    padding: 12px;
+  }
+  .suspect-name {
+    font-size: 26px;
+  }
+  .proof-card > strong {
+    font-size: 23px;
+  }
+  .file-label {
+    padding: 14px 18px;
+  }
+  .file-label span {
+    max-width: 105px;
+  }
+  .wedding-content h2 {
+    font-size: clamp(38px, 10.3vw, 48px);
+  }
+  .wedding-mark {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 850px) and (hover: none) {
+  .proof-card:hover {
+    transform: none;
+  }
+  .outline-button:hover {
+    color: var(--paper);
+    background: transparent;
+  }
+  .suspect:hover .suspect-portrait img {
+    filter: grayscale(1) contrast(1.15);
+  }
+}
+
+@media (max-width: 850px) and (orientation: landscape) and (max-height: 500px) {
+  .photo-dialog {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 32%);
+    align-items: center;
+    padding: 58px 12px 12px;
+  }
+  .photo-dialog > img {
+    max-height: calc(100dvh - 100px);
+    padding: 0;
+  }
+  .photo-dialog-caption {
+    padding: 12px;
+  }
+  .photo-dialog-caption p {
+    font-size: 12px;
+  }
+}

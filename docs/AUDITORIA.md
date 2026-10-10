@@ -24,7 +24,7 @@ Ambos MOV contienen metadatos de ubicación. El informe registra su presencia, s
 
 ## Calidad y selección
 
-- LC-001 / LC-020: misma escena de grupo en JPG y captura PNG. Confirmado visualmente; conservar ambos, mostrar una versión en la galería principal y vincular la otra como variante.
+- LC-001 / LC-020: misma escena de grupo en JPG y captura PNG. Confirmado visualmente; conservar ambos. Tras la petición de incluir todas las imágenes, ambas variantes aparecen en la galería.
 - LC-026 / LC-031 y LC-037 / LC-039: escenas repetidas en capturas con encuadres diferentes. Confirmación visual para agruparlas como variantes; no borrar originales.
 - LC-002 (207 × 203) y LC-012 (141 × 394): resolución insuficiente para retratos grandes. Mantener como detalle o prueba pequeña, sin prometer recuperación de detalle ni ampliar mediante IA.
 - Predominan fotos de grupo en interiores, registros nocturnos, playa/piscina, coche y viajes. Son categorías de contenido visible, no anécdotas ni fechas confirmadas.
@@ -47,7 +47,13 @@ Objetivo inicial de la versión web: aplicación, medios derivados y fuentes por
 
 `audit/inventory.json`: tamaño, formato, dimensiones, SHA-256, streams y fechas técnicas. `audit/video-decode.json`: resultado de la decodificación. `audit/contact-images-1.jpg` a `contact-images-4.jpg`: todas las imágenes. `audit/contact-videos.jpg`: muestras de ambos vídeos. `scripts/audit_media.py`: lectura de originales y producción de estos informes.
 
-Pendientes editoriales: fechas reales, explicación de cada escena, selección de variantes, contenido del audio, nuevas aportaciones y qué material puede publicarse online.
+Pendientes editoriales: fechas reales, explicación de cada escena, contenido del audio y nuevas aportaciones. Sergi ha autorizado expresamente la publicación pública y la inclusión de todas las imágenes; no se descartan variantes.
+
+## Incorporación de todas las imágenes y publicación
+
+Revisión de la raíz el 10-10-2026: las 41 imágenes del inventario cubren todas las fuentes fotográficas disponibles, sin aportaciones adicionales posteriores. `scripts/prepare_photos.py` verifica los hashes, conserva las siete copias JPEG ya aprobadas y genera las otras 34, sin ampliar por encima de su resolución original. Las copias JPEG suman 3.063.852 bytes (3,06 MB); catálogo en `public/media/catalog.json` y datos tipados en `src/data/photos.ts`.
+
+Las 41 aparecen en la galería pública (32 horizontales/cuadradas, 9 verticales). El ZIP offline contiene además los 41 originales fotográficos, verificados contra el inventario por SHA-256. No incorpora todavía los dos MOV de aventuras. Publicación documentada en `PUBLICACION.md`.
 
 ## Recurso de producción añadido — banda sonora
 

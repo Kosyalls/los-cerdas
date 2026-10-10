@@ -37,7 +37,9 @@ Maquetación: bordes duros, grandes bloques tipográficos, fotos ligeramente tor
 
 En escritorio, índice lateral persistente y vista central. En móvil, botón «Índice», contenidos en una columna y controles de al menos 44 px cuando son de uso principal. El visor ocupa el espacio disponible y se cierra con Escape o botón visible.
 
-Los apartados de la maqueta abren una explicación conceptual. Es un recurso de revisión de diseño, no la navegación de la aplicación terminada. El acceso actual es una apertura teatral, sin fingir una autenticación real.
+La galería ya es funcional: las 41 imágenes, filtros por orientación, visor anterior/siguiente y acceso al original en la copia offline. Los demás apartados abren una explicación conceptual. El acceso actual es una apertura teatral, sin fingir una autenticación real.
+
+Revisión móvil: cabecera persistente y menú de pantalla completa, zonas táctiles de al menos 44 px en controles principales, textos secundarios legibles, márgenes seguros y visor adaptado a vertical/horizontal. Las reglas están limitadas a 850 px; la comparación visual del escritorio antes/después de estos ajustes no detectó diferencias.
 
 ## Voz
 
@@ -57,6 +59,6 @@ El expediente de Kili conserva primero el tono gamberro. Tras el último interro
 
 ## Aprobación y alcance
 
-Sergi aprobó la dirección base al ver capturas reales y pidió intensificar la estética GTA. La maqueta actual incorpora esa revisión y la música aportada. Se entregan nuevas capturas de escritorio y móvil. La preferencia de revisión visual sigue vigente; no pedirle que interprete código.
+Sergi aprobó la dirección base al ver capturas reales y pidió intensificar la estética GTA. La versión pública incorpora esa revisión, la música aportada y todas las imágenes. Se entregan capturas de escritorio y móvil y una web navegable. La preferencia de revisión visual sigue vigente; no pedirle que interprete código.
 
 Las ocho secciones completas y la entrega integral requieren continuar el desarrollo y cerrar los relatos reales, las fechas y la privacidad. La maqueta sigue identificada como tal.

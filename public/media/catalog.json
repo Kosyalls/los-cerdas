@@ -1,0 +1,416 @@
+{
+  "date": "2026-10-10",
+  "imageCount": 41,
+  "photos": [
+    {
+      "id": "LC-001",
+      "text": "Cuatro amigos alrededor de una mesa con un recipiente y pajitas.",
+      "label": "FOTOGRAFÍA DE GRUPO",
+      "width": 640,
+      "height": 426,
+      "originalFile": "2016-11-22 21.28.33.jpg",
+      "originalSha256": "1d1dee77b53a7a8b195218fc73d366fcc546e90c12c0775a3afc5e33c5110a7c",
+      "src": "./media/LC-001.jpg"
+    },
+    {
+      "id": "LC-002",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-002.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 207,
+      "height": 203,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 17.28.01.png",
+      "originalSha256": "37c5818934d0e7e4b2f57ccafd6b3e32e03450ddc3f01a830ff3de4695b3690c",
+      "src": "./media/LC-002.jpg"
+    },
+    {
+      "id": "LC-003",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-003.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 427,
+      "height": 358,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 17.28.14.png",
+      "originalSha256": "19bfcbb83a38d23c5f3f0b13a383ddc10da95c4af1e64065248b57e26fcdf675",
+      "src": "./media/LC-003.jpg"
+    },
+    {
+      "id": "LC-004",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-004.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 617,
+      "height": 479,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.01.39.png",
+      "originalSha256": "cb0c145edb7f1766ada14722204c347712b1c48a6f92e517dab90a74d93b45bd",
+      "src": "./media/LC-004.jpg"
+    },
+    {
+      "id": "LC-005",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-005.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 643,
+      "height": 483,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.01.54.png",
+      "originalSha256": "460172da0b029d74c540696fbafa710b56f64d02fb585d1602caca3d22587027",
+      "src": "./media/LC-005.jpg"
+    },
+    {
+      "id": "LC-006",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-006.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1115,
+      "height": 812,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.04.02.png",
+      "originalSha256": "cf97d8e37d0e16a69135a2f715b42b4cd120e175f9d559d75270de51d8924512",
+      "src": "./media/LC-006.jpg"
+    },
+    {
+      "id": "LC-007",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-007.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 635,
+      "height": 475,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.04.59.png",
+      "originalSha256": "d4b79e3609db23bc46c131a7d7505b4db1acf3639185958ec31d2b82e509dbc1",
+      "src": "./media/LC-007.jpg"
+    },
+    {
+      "id": "LC-008",
+      "text": "Foto de grupo junto a una hoguera de noche.",
+      "label": "PRUEBA NOCTURNA",
+      "width": 640,
+      "height": 477,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.05.18.png",
+      "originalSha256": "b85b8734a06d09ca1a6677f5df55e98b5121e8d25e8b76ea3337a0e2fb8e9ee9",
+      "src": "./media/LC-008.jpg"
+    },
+    {
+      "id": "LC-009",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-009.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 640,
+      "height": 478,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.05.27.png",
+      "originalSha256": "00623a9f5f07de534be59503c282fd56e43dba1db8984bfa56724b441f0d3526",
+      "src": "./media/LC-009.jpg"
+    },
+    {
+      "id": "LC-010",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-010.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 640,
+      "height": 481,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.07.41.png",
+      "originalSha256": "3b5faf2204a844c732fe96d6bd62602587a712312a2cf9d70fdd116af60e2af4",
+      "src": "./media/LC-010.jpg"
+    },
+    {
+      "id": "LC-011",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-011.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 632,
+      "height": 474,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.08.35.png",
+      "originalSha256": "8773b526526b24989bfadc8ce1e8e564bbc8c78c68449cfbc7d99d1d51f29bed",
+      "src": "./media/LC-011.jpg"
+    },
+    {
+      "id": "LC-012",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-012.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 141,
+      "height": 394,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.08.45.png",
+      "originalSha256": "c9287d0b54021bf9c8d1bb1cf4672a490c166e0586da035ef3bda3d52b871ce1",
+      "src": "./media/LC-012.jpg"
+    },
+    {
+      "id": "LC-013",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-013.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 641,
+      "height": 481,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.11.11.png",
+      "originalSha256": "523d8436cd547338fb3a1481a1cb4ebbd3cc7d820d45ed6a62bca13397186b30",
+      "src": "./media/LC-013.jpg"
+    },
+    {
+      "id": "LC-014",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-014.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 479,
+      "height": 638,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.11.38.png",
+      "originalSha256": "5dff65b1c277c4aa4f32d34ed547904ee91cdc088df0bc16f813aa12382ea648",
+      "src": "./media/LC-014.jpg"
+    },
+    {
+      "id": "LC-015",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-015.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 568,
+      "height": 848,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.13.42.png",
+      "originalSha256": "40f2396cd0b5323ee96cba11c3556fda8b8a6e38f66728f602a892744a45501f",
+      "src": "./media/LC-015.jpg"
+    },
+    {
+      "id": "LC-016",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-016.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 639,
+      "height": 478,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.14.31.png",
+      "originalSha256": "8930513bb7d51a7523b8436ce174c6dbcd49de664493f0916f64c8e575c1aac1",
+      "src": "./media/LC-016.jpg"
+    },
+    {
+      "id": "LC-017",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-017.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 469,
+      "height": 586,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.16.58.png",
+      "originalSha256": "4bd102aa33d51b4d22653f8a0b7859f428140a302546551b6b175b860a2c4a2e",
+      "src": "./media/LC-017.jpg"
+    },
+    {
+      "id": "LC-018",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-018.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1280,
+      "height": 722,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.17.15.png",
+      "originalSha256": "93bf5b76cd50540b361cecf70d6fe915cc33ff3d5639da544cd1a26ca2370796",
+      "src": "./media/LC-018.jpg"
+    },
+    {
+      "id": "LC-019",
+      "text": "Tres amigos posan juntos en un local.",
+      "label": "FOTOGRAFÍA DE GRUPO",
+      "width": 640,
+      "height": 427,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.17.36.png",
+      "originalSha256": "575ceef873153cc3e67531f0bd99f9649d707768d029077faedbc082eb59748e",
+      "src": "./media/LC-019.jpg"
+    },
+    {
+      "id": "LC-020",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-020.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 723,
+      "height": 480,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.17.48.png",
+      "originalSha256": "dda0d178ade876c4eead5364563f374ee103de19d31e1e0dff4063a666dde202",
+      "src": "./media/LC-020.jpg"
+    },
+    {
+      "id": "LC-021",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-021.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 718,
+      "height": 480,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.19.12.png",
+      "originalSha256": "a834009f9e1000b8af5046a13224bb882239b33d88089e5c7b56336f6796aad1",
+      "src": "./media/LC-021.jpg"
+    },
+    {
+      "id": "LC-022",
+      "text": "Tres amigos se fotografían en una playa.",
+      "label": "REGISTRO EN LA PLAYA",
+      "width": 612,
+      "height": 384,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.34.46.png",
+      "originalSha256": "7cee5e2cb2fc916f5b81ef3cad7d3a18e0e8245d1c25239052ef23a12ad0b5ec",
+      "src": "./media/LC-022.jpg"
+    },
+    {
+      "id": "LC-023",
+      "text": "Tres amigos con gafas de sol dentro de un coche.",
+      "label": "REGISTRO EN EL COCHE",
+      "width": 611,
+      "height": 347,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.34.56.png",
+      "originalSha256": "9adddd52422bffd0fb3946b16d7ca9a544058c33b353fb6cc64477251c303012",
+      "src": "./media/LC-023.jpg"
+    },
+    {
+      "id": "LC-024",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-024.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 480,
+      "height": 630,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.37.50.png",
+      "originalSha256": "273b698f1af411f8664960b40edf9f14e398e4fa71021bbe18d031e47712e93e",
+      "src": "./media/LC-024.jpg"
+    },
+    {
+      "id": "LC-025",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-025.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 644,
+      "height": 641,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.38.40.png",
+      "originalSha256": "a33a711fac6d0a3e12016fe88411bb0de23a681c11f0b9991c6dbc0f4303eaee",
+      "src": "./media/LC-025.jpg"
+    },
+    {
+      "id": "LC-026",
+      "text": "Varios amigos posan en una foto vertical dentro de un local.",
+      "label": "FOTOGRAFÍA DE GRUPO",
+      "width": 481,
+      "height": 640,
+      "originalFile": "Captura de pantalla 2026-10-09 a las 18.39.03.png",
+      "originalSha256": "a49fa0540249a6302928a2112bce3650124c50a8732bbb0a5f20d4cf75a7023d",
+      "src": "./media/LC-026.jpg"
+    },
+    {
+      "id": "LC-029",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-029.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 813,
+      "height": 675,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.00.13.png",
+      "originalSha256": "7a292f78bb31fa004ab29f1c9b13ba2ff9bc67be8860c47cc9d01be8132cb6c3",
+      "src": "./media/LC-029.jpg"
+    },
+    {
+      "id": "LC-030",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-030.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1333,
+      "height": 811,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.01.05.png",
+      "originalSha256": "02c6a93427fc9aa5777f4bd164905760e776bc184363ffef53f01717f4690e0f",
+      "src": "./media/LC-030.jpg"
+    },
+    {
+      "id": "LC-031",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-031.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 818,
+      "height": 823,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.01.40.png",
+      "originalSha256": "afc5f5eb6dd8a28d0e4240c8b7fa231e9780c7d8584301a1ac1f1003bef7ffbe",
+      "src": "./media/LC-031.jpg"
+    },
+    {
+      "id": "LC-032",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-032.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1426,
+      "height": 757,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.03.24.png",
+      "originalSha256": "4e526a027fdc270eef39d076dfddcda5afde1e6a3dd86926268844d549b04baa",
+      "src": "./media/LC-032.jpg"
+    },
+    {
+      "id": "LC-033",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-033.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 806,
+      "height": 777,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.03.44.png",
+      "originalSha256": "5fc83ae278a5b3c07891f43b25a6b54e98e356bf08954ef9660027abf27d717f",
+      "src": "./media/LC-033.jpg"
+    },
+    {
+      "id": "LC-034",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-034.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1600,
+      "height": 759,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.04.06.png",
+      "originalSha256": "cc7928603ad664987a170c8020f455340148975ed4bf6d0c9f7ea77cbb2d537b",
+      "src": "./media/LC-034.jpg"
+    },
+    {
+      "id": "LC-035",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-035.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1407,
+      "height": 737,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.04.43.png",
+      "originalSha256": "7d7ca20321e16197edc8b6286d19cea2905008a39adae81e74c1c0b8361a6b3c",
+      "src": "./media/LC-035.jpg"
+    },
+    {
+      "id": "LC-036",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-036.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1149,
+      "height": 743,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.05.13.png",
+      "originalSha256": "65d4ad35cfbd954dc0d6f338efeb7fe4dfe555c1eba919bf06a9c4e4b69f2052",
+      "src": "./media/LC-036.jpg"
+    },
+    {
+      "id": "LC-037",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-037.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1190,
+      "height": 642,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.05.40.png",
+      "originalSha256": "15d0e5f87e2250ffb20640bf148c6cdd07b1c85c360ee12ad05de9526a29fa53",
+      "src": "./media/LC-037.jpg"
+    },
+    {
+      "id": "LC-038",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-038.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1119,
+      "height": 811,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.05.59.png",
+      "originalSha256": "f4d9643eb8876a71b3ef1a0d70fd3d399b3046a0a18cb95217dcb1471c0d9e54",
+      "src": "./media/LC-038.jpg"
+    },
+    {
+      "id": "LC-039",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-039.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 1380,
+      "height": 714,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 10.06.17.png",
+      "originalSha256": "79f1c4923a5b9cd2e19075e5c2ee3f277c995b7733a118ef01589ad8d6cd4faf",
+      "src": "./media/LC-039.jpg"
+    },
+    {
+      "id": "LC-040",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-040.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 489,
+      "height": 757,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 9.58.54.png",
+      "originalSha256": "d4f796322cc9fc010dfeefdcf84e5adeb9b98a2c59900799ec7d7cd97356fa18",
+      "src": "./media/LC-040.jpg"
+    },
+    {
+      "id": "LC-041",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-041.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 527,
+      "height": 920,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 9.59.05.png",
+      "originalSha256": "a0b4be1f081d16053bb00fb35ee552491fded6b99ea1a0c81e1cc558aae40fc4",
+      "src": "./media/LC-041.jpg"
+    },
+    {
+      "id": "LC-042",
+      "text": "Fotografía del archivo Los Cerdas, prueba LC-042.",
+      "label": "PRUEBA FOTOGRÁFICA",
+      "width": 810,
+      "height": 529,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 9.59.24.png",
+      "originalSha256": "871162689963d111bc986e6083afbde6687c26f86032a5f63a9b374cc8e1e498",
+      "src": "./media/LC-042.jpg"
+    },
+    {
+      "id": "LC-043",
+      "text": "De izquierda a derecha, Kili, Coco, Jowi y Luizao, según la identificación confirmada por Sergi.",
+      "label": "LOS CUATRO / IDENTIDAD CONFIRMADA",
+      "width": 780,
+      "height": 687,
+      "originalFile": "Captura de pantalla 2026-10-10 a las 9.59.43.png",
+      "originalSha256": "f525d085397312da045f6e1192605e1b19b5ebc8875f6097397e14a870693405",
+      "src": "./media/LC-043.jpg"
+    }
+  ]
+}

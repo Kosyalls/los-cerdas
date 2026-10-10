@@ -10,6 +10,7 @@
     "build:offline": "node scripts/build-offline.mjs",
     "package:prototype": "npm run build && npm run build:offline && python3 scripts/package_prototype.py",
     "audit:media": "python3 scripts/audit_media.py",
+    "prepare:photos": "python3 scripts/prepare_photos.py",
     "verify:originals": "python3 scripts/verify_originals.py",
     "preview": "vite preview --host 127.0.0.1"
   },

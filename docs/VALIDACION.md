@@ -1,29 +1,41 @@
-# Validación de la fase de diseño — 10-10-2026
+# Validación — 10-10-2026
 
-Esta validación comprueba la maqueta y la viabilidad del formato offline. **La dirección base fue aprobada por Sergi («me encanta»); se ha realizado la revisión GTA solicitada.** No equivale a validar una aplicación completa ni a confirmar su publicación.
+La dirección base fue aprobada por Sergi («me encanta»); la revisión GTA, la publicación pública, la mejora móvil y la incorporación de todas las imágenes están autorizadas. Esta versión implementa la galería completa de fotos y su conservación offline; los vídeos y las demás secciones completas siguen pendientes.
 
-## Resultados
+## Fotos y originales
 
-- TypeScript estricto y build de Vite aprobados.
-- Instalación con lockfile; npm informó cero vulnerabilidades al instalar.
-- Auditoría: 43 originales, 41 imágenes + 2 vídeos; todas las imágenes abren y ambos vídeos se decodifican completos sin errores. SHA-256 de los 43 originales y de la nueva grabación fuente de música verificado tras los cambios, sin modificaciones. La grabación musical se registra aparte del inventario de aventuras.
-- Navegación visual: apertura del expediente, todas las secciones conceptuales, fichas, visor de fotografía, cierre por Escape y botón; menú móvil y acceso al caso de Kili aprobados.
-- Navegador Chromium aislado: 1440, 390 y 320 px, sin desbordamiento horizontal y con imágenes y fuente local cargadas.
-- Axe: nueve comprobaciones —acceso, archivo y diálogo del novio en cada ancho— con **cero infracciones detectadas** para WCAG A/AA seleccionadas. Esto no sustituye una auditoría manual completa.
-- ZIP de maqueta: descarga desde el botón real comprobada; CRC de todos sus miembros correcto.
-- Offline: ZIP extraído a `/tmp/Los Cerdas - copia sin Internet/`, ruta cambiada y con espacios; `index.html` abierto mediante `file://` en contexto sin red y sin caché de la sesión online. JavaScript, fotos y fuente local funcionan; **cero peticiones HTTP/HTTPS** y ningún error JavaScript.
-- Música: MP3 completo decodificado sin errores; reproducción local tras interacción, pausa/reanudación, volumen inicial 28 %, repetición, respeto al silencio elegido y degradación si falta el audio. Probado también sin red desde file://.
-- 62 comprobaciones funcionales aprobadas en la revisión actual, además de las nueve revisiones axe.
-- Capturas desktop/móvil inspeccionadas. Corregidos contraste del rojo en texto pequeño y altura de las fotos con dimensiones HTML en móvil.
+- Las **41 imágenes** del inventario aparecen en la galería: 32 horizontales/cuadradas y 9 verticales. No se descartan variantes de la misma escena.
+- Todos los JPEG se decodifican en la galería online y en la copia extraída del ZIP.
+- El ZIP contiene los **41 originales fotográficos**, cada uno cotejado por SHA-256 con el inventario. CRC correcto de todos los miembros.
+- Los 44 archivos fuente siguen intactos: 43 recuerdos (41 imágenes y 2 vídeos) y una grabación fuente musical, registrada aparte. Ambos MOV de recuerdos y el MP3 ya se decodificaron completos sin errores.
+- TypeScript estricto y compilaciones Vite/IIFE aprobados.
 
-Evidencia: `evidence/qa-report.json`, `gate-1440.png`, `gate-390.png`, `gate-320.png`, `archive-1440.png`, `archive-390.png`, `archive-320.png`, `offline.png`. Se recurrió a QA aislada porque el navegador integrado devolvió «No browser is available» y su lista estaba vacía. No se usó ninguna sesión personal del navegador.
+## Móvil y escritorio
 
-## Alcance real de la entrega
+304 comprobaciones funcionales online aprobadas en **Chromium y WebKit**: nueve tamaños por motor (320×568, 360×640, 375×667, 390×844, 414×896, 430×932, 768×1024, 844×390 y 568×320).
 
-`public/downloads/los-cerdas-maqueta-offline.zip` contiene siete fotografías de muestra, cuatro retratos, el MP3, la fuente con licencia, el HTML y los bundles. Pesa **4722653 bytes (4,72 MB)**. No contiene los 43 originales ni los dos vídeos; el paquete completo de recuerdos queda para la siguiente fase de implementación.
+Se comprueban acceso visible en vertical, ausencia de desbordamiento horizontal, cabecera alcanzable al desplazarse, menú con foco contenido y fondo bloqueado, las 41 fotos, filtros, visor, navegación anterior/siguiente con vuelta al principio, flechas de teclado, controles táctiles y retorno a galería al cerrar la foto.
 
-No hay cronología editorial definitiva, autenticación, vídeos convertidos, secretos funcionales ni publicación. La vista de cada sección presenta su propuesta de experiencia. Las fechas permanecen sin confirmar y las identidades solo proceden de instrucciones explícitas de Sergi.
+Cuatro revisiones axe actuales (archivo y galería en cada motor a 390 px) sin infracciones detectadas para las etiquetas WCAG A/AA seleccionadas. La fase anterior había pasado nueve revisiones axe y 62 comprobaciones de la maqueta con música; son evidencias históricas, no un sustituto de revisión manual completa.
 
-## Pendientes antes de entregar el regalo
+Los cambios específicos de móvil se compararon en ocho capturas de escritorio, a 1024/1440/1920 px: **cero diferencias de píxeles**. Esta comparación se realizó antes de incorporar la galería completa; la nueva galería y sus controles son contenido añadido deliberadamente también para PC. La galería de escritorio se comprobó después en ambos motores.
 
-Relatos y fechas reales; selección online/privada; prueba de la aplicación y medios completos en el dispositivo del novio, Safari/Firefox y móviles físicos. También quedan por verificar el peso final y los límites/configuración del hosting gratuito elegido.
+Capturas de la nueva galería móvil inspeccionadas. No se han probado todavía móviles físicos.
+
+## Offline
+
+ZIP actual: `public/downloads/los-cerdas-maqueta-offline.zip`, **34.201.093 bytes (34,2 MB)**. Incluye web interactiva, 41 fotos, 41 originales, cuatro retratos, MP3, fuente/licencia, catálogo, hashes y `GALERIA.html` sin JavaScript.
+
+La copia recién extraída a `/tmp/Los Cerdas - copia sin Internet/` abre `index.html` mediante **file://**, sin servidor ni caché previa. 26 comprobaciones adicionales offline/escritorio aprobadas en Chromium y WebKit: música local y silencio, todas las fotos decodificadas, acceso al original en otra pestaña, dimensiones originales, cierre de diálogos y galería estática con las 41 imágenes sin JavaScript. **Cero solicitudes HTTP/HTTPS y cero errores JavaScript.**
+
+Chromium se prueba con emulación offline activada. En este entorno aislado, la emulación offline de WebKit rechaza incluso la navegación file://; se verificó la misma copia con cualquier solicitud HTTP/HTTPS abortada y ninguna solicitud externa producida.
+
+Un fallo encontrado en la prueba inicial: `download` sobre file:// abría la foto en la misma pestaña. Se cambió el control a «Abrir original», en una pestaña independiente, y se volvió a comprobar la copia final en ambos motores. Los originales ya están guardados dentro del ZIP.
+
+Evidencia local (excluida de Git): `evidence/verification-final.json`, `offline-final-report.json`, `mobile-gallery-report.json`, `mobile-chromium-*.png`, `mobile-webkit-*.png` y `desktop-before/after-*.png`. El informe inicial de galería conserva el fallo corregido; el agregado final recoge su resolución y el nuevo resultado. Se utilizó QA aislada porque el navegador integrado no estaba disponible; no se usaron perfiles personales.
+
+## Publicación y alcance
+
+Web pública en https://los-cerdas.vercel.app; repositorio público en https://github.com/Kosyalls/los-cerdas. Publicación y verificación anónima descritas en `PUBLICACION.md`; evidencia de producción en `evidence/publication-report.json`.
+
+La cronología, los vídeos, los secretos y las fichas editoriales completas siguen en diseño. Las fechas permanecen sin confirmar y las identidades solo proceden de instrucciones explícitas de Sergi. Los dos vídeos originales no están aún en el ZIP.
