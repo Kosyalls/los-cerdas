@@ -39,6 +39,6 @@ Fuente: mensaje explícito del 10-10-2026, posterior a la petición de todas las
 | Kili / Il Mafias | El mafioso del grupo | Máximo exponente en contratación de sicarios. Se casa. |
 | Coco | El informático | Pasó toda su graduación jugando al Hearthstone. Acabó en leyenda. |
 | Luizao / Gitano | El ladrón profesional | Habilidad especial: abrir cerraduras, especialmente las de los coches. |
-| Jowi | El popipoieador máximo | Matamoros a sueldo. Líder en la planificación de asaltos. Una vez le preguntó a una china si comía cerdo. |
+| Jowi | El poipoieador máximo | Matamoros a sueldo. Líder en la planificación de asaltos. Una vez le preguntó a una china si comía cerdo. |
 
-Se conserva «popipoieador» tal como lo escribió Sergi. No se añaden fechas, objetivos, instrucciones de delitos ni historias nuevas. Cada retrato abre su ficha individual; el índice abre la selección de los cuatro. Textos en `src/data/members.ts`, interfaz en `src/SuspectFile.tsx`, incluidos en la copia offline.
+Sergi corrigió el título de Jowi a «EL POIPOIEADOR MÁXIMO» el 10-10-2026. No se añaden fechas, objetivos, instrucciones de delitos ni historias nuevas. Cada retrato abre su ficha individual; el índice abre la selección de los cuatro. Textos en `src/data/members.ts`, interfaz en `src/SuspectFile.tsx`, incluidos en la copia offline.

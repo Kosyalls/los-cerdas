@@ -35,7 +35,7 @@ export const members = [
     name: "JOWI",
     alias: "",
     fileNumber: "03",
-    role: "EL POPIPOIEADOR MÁXIMO",
+    role: "EL POIPOIEADOR MÁXIMO",
     records: [
       { label: "ESPECIALIDAD", text: "Matamoros a sueldo. Líder en la planificación de asaltos." },
       { label: "INCIDENTE REGISTRADO", text: "Una vez le preguntó a una china si comía cerdo." },

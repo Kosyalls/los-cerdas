@@ -24,7 +24,7 @@ Capturas de la nueva galería móvil inspeccionadas. No se han probado todavía 
 
 ## Offline
 
-ZIP actual: `public/downloads/los-cerdas-maqueta-offline.zip`, **34.202.700 bytes (34,2 MB)**. Incluye web interactiva, 41 fotos, 41 originales, cuatro retratos, MP3, fuente/licencia, catálogo, hashes y `GALERIA.html` sin JavaScript.
+ZIP actual: `public/downloads/los-cerdas-maqueta-offline.zip`, **34.202.697 bytes (34,2 MB)**. Incluye web interactiva, 41 fotos, 41 originales, cuatro retratos, MP3, fuente/licencia, catálogo, hashes y `GALERIA.html` sin JavaScript.
 
 La copia recién extraída a `/tmp/Los Cerdas - copia sin Internet/` abre `index.html` mediante **file://**, sin servidor ni caché previa. 26 comprobaciones adicionales offline/escritorio aprobadas en Chromium y WebKit: música local y silencio, todas las fotos decodificadas, acceso al original en otra pestaña, dimensiones originales, cierre de diálogos y galería estática con las 41 imágenes sin JavaScript. **Cero solicitudes HTTP/HTTPS y cero errores JavaScript.**
 
@@ -43,3 +43,7 @@ La cronología, los vídeos, los secretos y el expediente especial completo sigu
 ## Fichas personalizadas y acceso visible a todas las fotos
 
 264 comprobaciones adicionales aprobadas en Chromium/WebKit: las cuatro fichas desde cada retrato, sus textos exactos y retratos confirmados, selector de sospechosos desde el índice, cierre por botón/Escape, retorno entre diálogos, controles de 44 px, ausencia de desbordamiento y contenido offline. Tamaños: 1440×1000, 390×844, 320×568 y 844×390. Cuatro revisiones axe sobre las nuevas fichas móviles sin infracciones detectadas. El nuevo botón «VER LAS 41 FOTOS» al principio del expediente abre las 41 en todos esos tamaños y motores. Capturas de Kili en PC/móvil inspeccionadas. Evidencia: `evidence/suspects-report.json` y `ficha-*.png`.
+
+## Corrección del título de Jowi
+
+Sergi corrigió expresamente el título a «EL POIPOIEADOR MÁXIMO» el 10-10-2026. Compilación/typecheck y ZIP regenerados; la corrección aparece en ambos bundles. CRC del nuevo ZIP correcto.
