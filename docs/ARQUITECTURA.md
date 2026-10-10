@@ -1,6 +1,6 @@
 # Arquitectura — online y conservación offline
 
-React 19 + TypeScript + Vite, datos locales y recursos locales. Sin backend para el contenido de recuerdos. La versión pública implementa acceso, galería de las 41 imágenes, música y descarga offline con originales fotográficos; las demás funciones completas siguen en diseño. Publicación autorizada por Sergi el 10-10-2026.
+React 19 + TypeScript + Vite, datos locales y recursos locales. Sin backend para el contenido de recuerdos. La versión pública implementa acceso, cuatro fichas personalizadas, galería de las 41 imágenes, música y descarga offline con originales fotográficos; las demás funciones completas siguen en diseño. Publicación autorizada por Sergi el 10-10-2026.
 
 ## Dos entregas desde el mismo contenido
 
@@ -18,7 +18,7 @@ flowchart LR
     W --> V[Vercel: web pública desplegada]
 ```
 
-El catálogo fotográfico es TypeScript/JSON versionado con IDs estables (`src/data/photos.ts` y `public/media/catalog.json`). La arquitectura editorial futura contempla estas entidades: Entidades: `Member`, `MediaAsset`, `Episode`, `GroomCase`, `Secret`, `ArchiveManifest`. Los medios conservarán ruta original, SHA-256, ruta derivada, dimensiones, orientación, fecha técnica y fecha editorial con estado `confirmed / approximate / unknown`. Una relación persona/medio tendrá fuente de confirmación; no se deducirá por reconocimiento facial. Separar el texto confirmado de la ficción gráfica.
+El catálogo fotográfico es TypeScript/JSON versionado con IDs estables (`src/data/photos.ts` y `public/media/catalog.json`). La arquitectura editorial futura contempla estas entidades: `Member`, `MediaAsset`, `Episode`, `GroomCase`, `Secret`, `ArchiveManifest`. Los medios conservarán ruta original, SHA-256, ruta derivada, dimensiones, orientación, fecha técnica y fecha editorial con estado `confirmed / approximate / unknown`. Una relación persona/medio tendrá fuente de confirmación; no se deducirá por reconocimiento facial. Separar el texto confirmado de la ficción gráfica.
 
 Los datos se importan al bundle al construir. No usar `fetch()` para leer el catálogo en la edición `file://`. Fotos y vídeos usan rutas relativas. Navegación por hash o estado local, sin rutas que dependan de rewrites de servidor. La app no requiere persistir información para poder consultarse; favoritos/progreso serían mejoras optativas, con acceso a almacenamiento protegido y fallback en memoria.
 
@@ -70,7 +70,7 @@ No hay cuentas, autenticación, analytics ni servicios externos en ejecución. L
 1. Dirección artística, tono y publicación pública confirmados.
 2. Cerrar textos reales, cronología, clasificación de medios y privacidad.
 3. Preparar derivados y comprobar peso/calidad.
-4. Galería completa ya implementada; continuar fichas, vídeos, cronología y expediente Kili.
+4. Galería completa ya implementada; fichas personalizadas implementadas; continuar vídeos, cronología y expediente Kili.
 5. Música y descarga fotográfica offline incorporadas; continuar sorpresas y descarga integral con vídeos.
 6. Construir y verificar ZIP completo offline; añadir respaldo estático y hashes.
 7. Revisar con los tres amigos y el dispositivo de entrega; publicar la versión adecuada.

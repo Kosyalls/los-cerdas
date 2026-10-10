@@ -1,6 +1,6 @@
 # LOS CERDAS — El archivo clasificado
 
-Dirección artística base **aprobada por Sergi el 10-10-2026** («me encanta»). Revisión GTA con sangre gráfica, casquillos, impactos, cinta policial y estrellas. Publicación pública autorizada por Sergi: la versión actual incluye **las 41 imágenes**, música y copia offline con los originales fotográficos. Los vídeos y las demás secciones completas siguen pendientes.
+Dirección artística base **aprobada por Sergi el 10-10-2026** («me encanta»). Revisión GTA con sangre gráfica, casquillos, impactos, cinta policial y estrellas. Publicación pública autorizada por Sergi: la versión actual incluye **las 41 imágenes**, música y copia offline con los originales fotográficos. Los vídeos, la cronología, los secretos y el expediente especial completo siguen pendientes.
 
 - [Web pública](https://los-cerdas.vercel.app)
 - [Repositorio público](https://github.com/Kosyalls/los-cerdas)
@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Abre `http://127.0.0.1:5173`. Hay una pantalla de acceso, vista general del expediente, retratos confirmados y galería de las 41 fotografías: filtros por orientación, ampliación y navegación anterior/siguiente, también con flechas de teclado. El índice explica las demás secciones previstas. React + TypeScript + Vite; no hay datos ficticios de aventuras. Soviet Connection comienza al abrir el expediente, a volumen bajo, y el botón de sonido permite silenciarlo o activarlo. El MP3 está en `public/media/soviet-connection.mp3`.
+Abre `http://127.0.0.1:5173`. Hay una pantalla de acceso, vista general del expediente, cuatro fichas individuales con los textos de Sergi, retratos confirmados y galería de las 41 fotografías: filtros por orientación, ampliación y navegación anterior/siguiente, también con flechas de teclado. El botón «VER LAS 41 FOTOS» abre la galería desde el inicio del expediente. El índice de sospechosos y cada retrato abren las fichas personalizadas; el resto del índice explica las secciones previstas. React + TypeScript + Vite; no hay datos ficticios de aventuras. Soviet Connection comienza al abrir el expediente, a volumen bajo, y el botón de sonido permite silenciarlo o activarlo. El MP3 está en `public/media/soviet-connection.mp3`.
 
 El móvil tiene navegación modal, cabecera accesible al desplazarse, controles táctiles grandes y visor adaptado a vertical/horizontal. Los ajustes de `src/mobile.css` están limitados a pantallas de hasta 850 px; se comprobó que no cambian el diseño de escritorio.
 

@@ -64,11 +64,12 @@ await writeFile(
 3. No necesitas Internet, cuentas, Node, npm ni un servidor.
 
 Esta copia incluye las ${catalog.imageCount} imágenes, sus ${catalog.imageCount} originales sin modificar, cuatro retratos y una galería navegable.
+Incluye también las cuatro fichas personalizadas con los textos aportados por Sergi.
 Abre GALERIA.html si prefieres consultar todas las fotos sin JavaScript.
 El catálogo está en media/catalog.json y los hashes originales en SHA256SUMS.txt.
 Incluye Soviet Connection (Michael Hunter) como MP3 local, convertido de la grabación aportada por Sergi.
 El tema comienza al pulsar abrir el archivo, con volumen bajo. El botón de sonido permite silenciarlo o activarlo.
-Las demás secciones explican el diseño previsto; no son funciones terminadas.
+Las secciones de vídeos, cronología, secretos y expediente especial explican el diseño previsto; no son funciones terminadas.
 Los originales de las imágenes están en originales/; los dos vídeos quedan para la siguiente fase.
 La entrega final incorporará también los vídeos, relatos y demás secciones completas.
 

@@ -4,6 +4,7 @@ import { App } from "./App";
 import "./styles.css";
 import "./mobile.css";
 import "./gallery.css";
+import "./suspects.css";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

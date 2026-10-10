@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { members } from "./data/members";
+import { members, type Member } from "./data/members";
 import { inventory } from "./data/inventory";
 import { photos, type Photo } from "./data/photos";
 import { Gallery } from "./Gallery";
+import { SuspectFile, SuspectList } from "./SuspectFile";
 import {
   BloodSplatter,
   PoliceTape,
@@ -298,6 +299,8 @@ export function App() {
   const [section, setSection] = useState<Section | null>(null);
   const [photo, setPhoto] = useState<Photo | null>(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const [suspectsOpen, setSuspectsOpen] = useState(false);
+  const [suspect, setSuspect] = useState<Member | null>(null);
   const photoIndex = photo
     ? photos.findIndex((item) => item.id === photo.id)
     : -1;
@@ -360,6 +363,7 @@ export function App() {
   }, [entered]);
   const openSection = (item: Section) => {
     if (item.id === "pruebas") setGalleryOpen(true);
+    else if (item.id === "sospechosos") setSuspectsOpen(true);
     else setSection(item);
     setMenuOpen(false);
   };
@@ -653,9 +657,9 @@ export function App() {
                   <button
                     type="button"
                     className="outline-button"
-                    onClick={() => openSection(sections[0])}
+                    onClick={() => openSection(sections[1])}
                   >
-                    IDENTIFICAR SOSPECHOSOS <Arrow />
+                    VER LAS 41 FOTOS <Arrow />
                   </button>
                 </div>
                 <div className="hero-evidence-wrap">
@@ -786,9 +790,7 @@ export function App() {
                       type="button"
                       className={`suspect ${member.groom ? "suspect-groom" : ""}`}
                       key={member.id}
-                      onClick={() =>
-                        openSection(member.groom ? sections[4] : sections[0])
-                      }
+                      onClick={() => setSuspect(member)}
                     >
                       <span className="mono small">FICHA / 0{n + 1}</span>
                       <div className="suspect-portrait">
@@ -946,6 +948,24 @@ export function App() {
           onClose={() => setGalleryOpen(false)}
         >
           <Gallery onSelect={setPhoto} />
+        </Dialog>
+      )}
+      {suspectsOpen && (
+        <Dialog
+          title="Los sospechosos"
+          className="suspect-dialog"
+          onClose={() => setSuspectsOpen(false)}
+        >
+          <SuspectList onSelect={setSuspect} />
+        </Dialog>
+      )}
+      {suspect && (
+        <Dialog
+          title={`Ficha de ${suspect.name}`}
+          className="suspect-dialog"
+          onClose={() => setSuspect(null)}
+        >
+          <SuspectFile member={suspect} />
         </Dialog>
       )}
       {photo && (

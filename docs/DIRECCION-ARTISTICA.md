@@ -37,7 +37,7 @@ Maquetación: bordes duros, grandes bloques tipográficos, fotos ligeramente tor
 
 En escritorio, índice lateral persistente y vista central. En móvil, botón «Índice», contenidos en una columna y controles de al menos 44 px cuando son de uso principal. El visor ocupa el espacio disponible y se cierra con Escape o botón visible.
 
-La galería ya es funcional: las 41 imágenes, filtros por orientación, visor anterior/siguiente y acceso al original en la copia offline. Los demás apartados abren una explicación conceptual. El acceso actual es una apertura teatral, sin fingir una autenticación real.
+Las cuatro fichas ya son individuales, con retrato confirmado y los textos de humor aportados por Sergi. La galería ya es funcional: las 41 imágenes, filtros por orientación, visor anterior/siguiente y acceso al original en la copia offline. Los demás apartados abren una explicación conceptual. El acceso actual es una apertura teatral, sin fingir una autenticación real.
 
 Revisión móvil: cabecera persistente y menú de pantalla completa, zonas táctiles de al menos 44 px en controles principales, textos secundarios legibles, márgenes seguros y visor adaptado a vertical/horizontal. Las reglas están limitadas a 850 px; la comparación visual del escritorio antes/después de estos ajustes no detectó diferencias.
 
@@ -59,6 +59,6 @@ El expediente de Kili conserva primero el tono gamberro. Tras el último interro
 
 ## Aprobación y alcance
 
-Sergi aprobó la dirección base al ver capturas reales y pidió intensificar la estética GTA. La versión pública incorpora esa revisión, la música aportada y todas las imágenes. Se entregan capturas de escritorio y móvil y una web navegable. La preferencia de revisión visual sigue vigente; no pedirle que interprete código.
+Sergi aprobó la dirección base al ver capturas reales y pidió intensificar la estética GTA. La versión pública incorpora esa revisión, la música aportada, todas las imágenes y las fichas personalizadas. Se entregan capturas de escritorio y móvil y una web navegable. La preferencia de revisión visual sigue vigente; no pedirle que interprete código.
 
 Las ocho secciones completas y la entrega integral requieren continuar el desarrollo y cerrar los relatos reales, las fechas y la privacidad. La maqueta sigue identificada como tal.

@@ -24,7 +24,7 @@ Capturas de la nueva galería móvil inspeccionadas. No se han probado todavía 
 
 ## Offline
 
-ZIP actual: `public/downloads/los-cerdas-maqueta-offline.zip`, **34.201.093 bytes (34,2 MB)**. Incluye web interactiva, 41 fotos, 41 originales, cuatro retratos, MP3, fuente/licencia, catálogo, hashes y `GALERIA.html` sin JavaScript.
+ZIP actual: `public/downloads/los-cerdas-maqueta-offline.zip`, **34.202.700 bytes (34,2 MB)**. Incluye web interactiva, 41 fotos, 41 originales, cuatro retratos, MP3, fuente/licencia, catálogo, hashes y `GALERIA.html` sin JavaScript.
 
 La copia recién extraída a `/tmp/Los Cerdas - copia sin Internet/` abre `index.html` mediante **file://**, sin servidor ni caché previa. 26 comprobaciones adicionales offline/escritorio aprobadas en Chromium y WebKit: música local y silencio, todas las fotos decodificadas, acceso al original en otra pestaña, dimensiones originales, cierre de diálogos y galería estática con las 41 imágenes sin JavaScript. **Cero solicitudes HTTP/HTTPS y cero errores JavaScript.**
 
@@ -38,4 +38,8 @@ Evidencia local (excluida de Git): `evidence/verification-final.json`, `offline-
 
 Web pública en https://los-cerdas.vercel.app; repositorio público en https://github.com/Kosyalls/los-cerdas. Publicación y verificación anónima descritas en `PUBLICACION.md`; evidencia de producción en `evidence/publication-report.json`.
 
-La cronología, los vídeos, los secretos y las fichas editoriales completas siguen en diseño. Las fechas permanecen sin confirmar y las identidades solo proceden de instrucciones explícitas de Sergi. Los dos vídeos originales no están aún en el ZIP.
+La cronología, los vídeos, los secretos y el expediente especial completo siguen en diseño. Las cuatro fichas individuales ya incorporan los textos aportados por Sergi. Las fechas permanecen sin confirmar y las identidades solo proceden de instrucciones explícitas de Sergi. Los dos vídeos originales no están aún en el ZIP.
+
+## Fichas personalizadas y acceso visible a todas las fotos
+
+264 comprobaciones adicionales aprobadas en Chromium/WebKit: las cuatro fichas desde cada retrato, sus textos exactos y retratos confirmados, selector de sospechosos desde el índice, cierre por botón/Escape, retorno entre diálogos, controles de 44 px, ausencia de desbordamiento y contenido offline. Tamaños: 1440×1000, 390×844, 320×568 y 844×390. Cuatro revisiones axe sobre las nuevas fichas móviles sin infracciones detectadas. El nuevo botón «VER LAS 41 FOTOS» al principio del expediente abre las 41 en todos esos tamaños y motores. Capturas de Kili en PC/móvil inspeccionadas. Evidencia: `evidence/suspects-report.json` y `ficha-*.png`.

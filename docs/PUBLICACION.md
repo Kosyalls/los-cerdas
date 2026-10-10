@@ -7,7 +7,7 @@ Sergi autorizó explícitamente: «subela a github y a vercel, hazlo publico». 
 - ZIP: https://los-cerdas.vercel.app/downloads/los-cerdas-maqueta-offline.zip
 - Vercel: proyecto `los-cerdas`, equipo `kosys-projects`.
 
-La versión inicial se publicó correctamente mediante Vercel CLI. La actualización incluye las 41 imágenes, la galería navegable, ajustes móviles y un ZIP de 34,2 MB con los 41 originales fotográficos. Las comprobaciones de producción son anónimas: página, assets, recursos y descarga sin sesión iniciada; el ZIP remoto debe coincidir con el artefacto local por SHA-256.
+La versión inicial se publicó correctamente mediante Vercel CLI. La actualización incluye las 41 imágenes, la galería navegable con acceso directo al principio, cuatro fichas personalizadas, ajustes móviles y un ZIP de 34,2 MB con los 41 originales fotográficos. Las comprobaciones de producción son anónimas: página, assets, recursos y descarga sin sesión iniciada; el ZIP remoto debe coincidir con el artefacto local por SHA-256.
 
 ## Actualizar la web
 
